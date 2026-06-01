@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Catálogo - Nombre de tu tienda</title>
+  <title>Relojes Jack - Caracas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    /* ===== VARIABLES - CAMBIA AQUÍ LOS COLORES DE TU MARCA ===== */
     :root {
-      --color-primary: #1a1a2e;       /* Color principal (fondo header) */
-      --color-accent: #e94560;        /* Color de acento (botones, precios) */
-      --color-accent2: #0f3460;       /* Color secundario */
-      --color-bg: #f4f4f8;            /* Fondo general */
-      --color-card: #ffffff;          /* Fondo de tarjetas */
-      --color-text: #1a1a2e;         /* Texto principal */
-      --color-text-light: #6b7280;   /* Texto secundario */
+      --color-primary: #1a1a2e;
+      --color-accent: #e94560;
+      --color-accent2: #0f3460;
+      --color-bg: #f4f4f8;
+      --color-card: #ffffff;
+      --color-text: #1a1a2e;
+      --color-text-light: #6b7280;
       --color-white: #ffffff;
       --font-title: 'Bebas Neue', sans-serif;
       --font-body: 'DM Sans', sans-serif;
@@ -26,598 +25,248 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--color-bg);
-      color: var(--color-text);
-    }
+    body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-text); }
 
     /* ===== HEADER ===== */
-    .header {
-      background: var(--color-primary);
-      color: var(--color-white);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .header-banner {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      display: block;
-      opacity: 0.7;
-    }
-
+    .header { background: var(--color-primary); color: var(--color-white); position: relative; overflow: hidden; }
+    .header-banner { width: 100%; height: 160px; object-fit: cover; display: block; opacity: 0.7; }
     .header-banner-placeholder {
-      width: 100%;
-      height: 160px;
+      width: 100%; height: 160px;
       background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent2) 50%, var(--color-accent) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+      display: flex; align-items: center; justify-content: center; position: relative;
     }
-
     .header-banner-placeholder::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 10px,
-        rgba(255,255,255,0.03) 10px,
-        rgba(255,255,255,0.03) 20px
-      );
+      content: ''; position: absolute; inset: 0;
+      background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 20px);
     }
-
-    .header-content {
-      padding: 20px 20px 0;
-      position: relative;
-    }
-
-    .header-top-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .logo-container {
-      flex-shrink: 0;
-    }
-
-    .logo-img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--color-accent);
-      background: var(--color-accent2);
-    }
-
+    .header-content { padding: 20px 20px 0; position: relative; }
+    .header-top-row { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+    .logo-container { flex-shrink: 0; }
+    .logo-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-accent); background: var(--color-accent2); }
     .logo-placeholder {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: var(--color-accent2);
-      border: 3px solid var(--color-accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-title);
-      font-size: 2rem;
-      color: var(--color-white);
+      width: 80px; height: 80px; border-radius: 50%; background: var(--color-accent2);
+      border: 3px solid var(--color-accent); display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-title); font-size: 2rem; color: var(--color-white);
     }
-
     .store-info { flex: 1; }
-
-    .store-name {
-      font-family: var(--font-title);
-      font-size: 1.8rem;
-      letter-spacing: 1px;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .store-description {
-      font-size: 0.82rem;
-      opacity: 0.85;
-      line-height: 1.5;
-      margin-bottom: 10px;
-    }
-
-    .store-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      font-size: 0.78rem;
-      opacity: 0.8;
-    }
-
-    .store-meta-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 7px;
-    }
-
+    .store-name { font-family: var(--font-title); font-size: 1.8rem; letter-spacing: 1px; line-height: 1; margin-bottom: 4px; }
+    .store-description { font-size: 0.82rem; opacity: 0.85; line-height: 1.5; margin-bottom: 10px; }
+    .store-meta { display: flex; flex-direction: column; gap: 5px; font-size: 0.78rem; opacity: 0.8; }
+    .store-meta-item { display: flex; align-items: flex-start; gap: 7px; }
     .store-meta-item i { margin-top: 2px; color: var(--color-accent); font-size: 0.75rem; }
-
-    .social-buttons {
-      display: flex;
-      gap: 10px;
-      padding: 16px 0;
-    }
-
+    .social-buttons { display: flex; gap: 10px; padding: 16px 0; }
     .social-btn {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-white);
-      text-decoration: none;
-      font-size: 1rem;
-      transition: all 0.2s;
-      cursor: pointer;
+      width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center;
+      color: var(--color-white); text-decoration: none; font-size: 1rem; transition: all 0.2s; cursor: pointer;
     }
-
     .social-btn:hover { background: var(--color-accent); border-color: var(--color-accent); }
 
     /* ===== CATEGORÍAS STICKY ===== */
     .categories-bar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--color-primary);
-      padding: 10px 16px;
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      scrollbar-width: none;
+      position: sticky; top: 0; z-index: 100; background: var(--color-primary);
+      padding: 10px 16px; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none;
       box-shadow: 0 2px 12px rgba(0,0,0,0.2);
     }
-
     .categories-bar::-webkit-scrollbar { display: none; }
-
     .cat-btn {
-      flex-shrink: 0;
-      padding: 7px 16px;
-      border-radius: 20px;
-      border: none;
-      font-family: var(--font-body);
-      font-size: 0.82rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-      background: rgba(255,255,255,0.1);
-      color: var(--color-white);
+      flex-shrink: 0; padding: 7px 16px; border-radius: 20px; border: none;
+      font-family: var(--font-body); font-size: 0.82rem; font-weight: 500; cursor: pointer;
+      transition: all 0.2s; background: rgba(255,255,255,0.1); color: var(--color-white);
     }
-
     .cat-btn:hover { background: rgba(255,255,255,0.2); }
     .cat-btn.active { background: var(--color-accent); color: #fff; }
-
     .cat-btn-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: none;
-      background: var(--color-accent);
-      color: white;
-      font-size: 0.9rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: all 0.2s;
+      width: 36px; height: 36px; border-radius: 50%; border: none; background: var(--color-accent);
+      color: white; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0; transition: all 0.2s;
     }
-
     .cat-btn-icon:hover { background: #c73652; transform: scale(1.05); }
 
     /* ===== BÚSQUEDA ===== */
     .search-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 200;
-      align-items: flex-start;
-      padding-top: 80px;
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+      z-index: 200; align-items: flex-start; padding-top: 80px;
     }
-
     .search-overlay.open { display: flex; justify-content: center; }
-
     .search-box {
-      background: white;
-      border-radius: var(--radius);
-      padding: 16px;
-      width: 90%;
-      max-width: 480px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      background: white; border-radius: var(--radius); padding: 16px;
+      width: 90%; max-width: 480px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     }
-
-    .search-input-row {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
+    .search-input-row { display: flex; gap: 8px; margin-bottom: 12px; }
     .search-input {
-      flex: 1;
-      padding: 10px 14px;
-      border: 2px solid #e5e7eb;
-      border-radius: 8px;
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      outline: none;
+      flex: 1; padding: 10px 14px; border: 2px solid #e5e7eb; border-radius: 8px;
+      font-family: var(--font-body); font-size: 0.9rem; outline: none;
     }
-
     .search-input:focus { border-color: var(--color-accent); }
-
-    .search-close-btn {
-      padding: 10px 14px;
-      background: #f3f4f6;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
+    .search-close-btn { padding: 10px 14px; background: #f3f4f6; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; }
 
     /* ===== MAIN CONTENT ===== */
-    .main-content {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 24px 16px;
-    }
-
+    .main-content { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
     .section-title {
-      font-family: var(--font-title);
-      font-size: 1.8rem;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
-      color: var(--color-text);
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      font-family: var(--font-title); font-size: 1.8rem; letter-spacing: 1px; margin-bottom: 20px;
+      color: var(--color-text); display: flex; align-items: center; gap: 10px;
     }
-
     .section-title::after {
-      content: '';
-      flex: 1;
-      height: 2px;
-      background: linear-gradient(to right, var(--color-accent), transparent);
-      border-radius: 2px;
+      content: ''; flex: 1; height: 2px;
+      background: linear-gradient(to right, var(--color-accent), transparent); border-radius: 2px;
     }
 
     /* ===== PRODUCT GRID ===== */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; margin-bottom: 32px; }
     .product-card {
-      background: var(--color-card);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      cursor: pointer;
-      transition: all 0.25s;
-      position: relative;
+      background: var(--color-card); border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow); cursor: pointer; transition: all 0.25s; position: relative;
     }
-
-    .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-    }
-
+    .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
     .product-card.hidden { display: none; }
-
-    .product-img-wrap {
-      aspect-ratio: 1/1;
-      overflow: hidden;
-      background: #f9fafb;
-      position: relative;
-    }
-
-    .product-img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      transition: transform 0.3s;
-      padding: 8px;
-    }
-
+    .product-img-wrap { aspect-ratio: 1/1; overflow: hidden; background: #f9fafb; position: relative; }
+    .product-img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s; padding: 8px; }
     .product-card:hover .product-img { transform: scale(1.05); }
-
     .product-img-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #f0f0f5, #e0e0ef);
-      color: #c0c0d0;
-      font-size: 2.5rem;
+      width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #f0f0f5, #e0e0ef); color: #c0c0d0; font-size: 2.5rem;
     }
-
-    .product-info {
-      padding: 10px 12px 12px;
-    }
-
+    .product-info { padding: 10px 12px 12px; }
     .product-name {
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--color-text);
-      line-height: 1.4;
-      margin-bottom: 6px;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      font-size: 0.78rem; font-weight: 500; color: var(--color-text); line-height: 1.4; margin-bottom: 6px;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
     }
-
-    .product-price {
-      font-family: var(--font-title);
-      font-size: 1.1rem;
-      color: var(--color-accent);
-      letter-spacing: 0.5px;
-    }
-
+    .product-price { font-family: var(--font-title); font-size: 1.1rem; color: var(--color-accent); letter-spacing: 0.5px; }
     .product-category-badge {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      background: rgba(26,26,46,0.75);
-      color: white;
-      font-size: 0.65rem;
-      padding: 3px 8px;
-      border-radius: 10px;
-      backdrop-filter: blur(4px);
+      position: absolute; top: 8px; left: 8px; background: rgba(26,26,46,0.75); color: white;
+      font-size: 0.65rem; padding: 3px 8px; border-radius: 10px; backdrop-filter: blur(4px);
     }
-
     .whatsapp-btn {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      width: 32px;
-      height: 32px;
-      background: #25d366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 0.85rem;
-      text-decoration: none;
-      opacity: 0;
-      transform: scale(0.8);
-      transition: all 0.2s;
+      position: absolute; bottom: 10px; right: 10px; width: 32px; height: 32px;
+      background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 0.85rem; text-decoration: none; opacity: 0; transform: scale(0.8); transition: all 0.2s;
     }
+    .product-card:hover .whatsapp-btn { opacity: 1; transform: scale(1); }
 
-    .product-card:hover .whatsapp-btn {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    /* ===== MODAL PRODUCTO ===== */
+    /* ===== MODAL CON CARRUSEL ===== */
     .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      z-index: 300;
-      align-items: flex-end;
-      justify-content: center;
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+      z-index: 300; align-items: flex-end; justify-content: center;
     }
-
     .modal-overlay.open { display: flex; }
-
     .modal {
-      background: var(--color-card);
-      border-radius: var(--radius) var(--radius) 0 0;
-      width: 100%;
-      max-width: 520px;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 20px;
-      animation: slideUp 0.3s ease;
+      background: var(--color-card); border-radius: var(--radius) var(--radius) 0 0;
+      width: 100%; max-width: 520px; max-height: 92vh; overflow-y: auto;
+      padding: 20px; animation: slideUp 0.3s ease;
     }
-
-    @keyframes slideUp {
-      from { transform: translateY(100%); }
-      to { transform: translateY(0); }
-    }
-
+    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
     .modal-close {
-      float: right;
-      background: #f3f4f6;
-      border: none;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 12px;
+      float: right; background: #f3f4f6; border: none; width: 32px; height: 32px;
+      border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex;
+      align-items: center; justify-content: center; margin-bottom: 12px;
     }
 
-    .modal-img {
-      width: 100%;
-      aspect-ratio: 1/1;
-      object-fit: contain;
-      border-radius: 8px;
-      background: #f9fafb;
-      margin-bottom: 16px;
-      padding: 12px;
+    /* Carrusel */
+    .carousel-wrap { position: relative; margin-bottom: 12px; }
+    .carousel-track-outer {
+      overflow: hidden; border-radius: 10px; background: #f9fafb;
+      aspect-ratio: 1/1; position: relative;
+    }
+    .carousel-track {
+      display: flex; transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+      height: 100%;
+    }
+    .carousel-slide {
+      min-width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+    }
+    .carousel-slide img {
+      max-width: 100%; max-height: 100%; object-fit: contain; padding: 12px;
+    }
+    .carousel-slide .no-img {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: #c0c0d0; font-size: 3rem; gap: 8px;
+    }
+    .carousel-slide .no-img span { font-size: 0.8rem; font-family: var(--font-body); }
+
+    /* Flechas */
+    .carousel-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 36px; height: 36px; border-radius: 50%; border: none;
+      background: rgba(26,26,46,0.7); color: white; font-size: 0.9rem;
+      cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s; backdrop-filter: blur(4px);
+    }
+    .carousel-arrow:hover { background: var(--color-accent); }
+    .carousel-arrow.prev { left: 8px; }
+    .carousel-arrow.next { right: 8px; }
+    .carousel-arrow.hidden { display: none; }
+
+    /* Contador de fotos */
+    .carousel-counter {
+      position: absolute; bottom: 10px; right: 10px;
+      background: rgba(0,0,0,0.5); color: white; font-size: 0.7rem;
+      padding: 3px 8px; border-radius: 10px; backdrop-filter: blur(4px);
     }
 
-    .modal-name {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 8px;
+    /* Miniaturas */
+    .carousel-thumbs {
+      display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px;
+      scrollbar-width: thin; scrollbar-color: var(--color-accent) transparent;
+      margin-bottom: 14px;
+    }
+    .carousel-thumbs::-webkit-scrollbar { height: 3px; }
+    .carousel-thumbs::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: 3px; }
+    .carousel-thumb {
+      width: 56px; height: 56px; flex-shrink: 0; border-radius: 8px; overflow: hidden;
+      border: 2px solid transparent; cursor: pointer; transition: border-color 0.2s;
+      background: #f0f0f5;
+    }
+    .carousel-thumb.active { border-color: var(--color-accent); }
+    .carousel-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .carousel-thumb .thumb-placeholder {
+      width: 100%; height: 100%; display: flex; align-items: center;
+      justify-content: center; color: #c0c0d0; font-size: 1.2rem;
     }
 
-    .modal-price {
-      font-family: var(--font-title);
-      font-size: 1.8rem;
-      color: var(--color-accent);
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-
-    .modal-description {
-      font-size: 0.85rem;
-      color: var(--color-text-light);
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
+    .modal-name { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+    .modal-price { font-family: var(--font-title); font-size: 1.8rem; color: var(--color-accent); letter-spacing: 1px; margin-bottom: 12px; }
+    .modal-description { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.6; margin-bottom: 16px; }
     .modal-whatsapp-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      padding: 14px;
-      background: #25d366;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-family: var(--font-body);
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%; padding: 14px; background: #25d366; color: white; border: none;
+      border-radius: 10px; font-family: var(--font-body); font-size: 1rem; font-weight: 600;
+      cursor: pointer; text-decoration: none; transition: background 0.2s;
     }
-
     .modal-whatsapp-btn:hover { background: #1dbd5a; }
 
     /* ===== CATEGORÍAS SECTION ===== */
-    .categories-section {
-      margin: 12px 0 32px;
-    }
-
-    .cat-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
+    .categories-section { margin: 12px 0 32px; }
+    .cat-chips { display: flex; flex-wrap: wrap; gap: 10px; }
     .cat-chip {
-      padding: 8px 18px;
-      border-radius: 20px;
-      background: var(--color-card);
-      border: 2px solid #e5e7eb;
-      font-size: 0.82rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-      color: var(--color-text);
+      padding: 8px 18px; border-radius: 20px; background: var(--color-card);
+      border: 2px solid #e5e7eb; font-size: 0.82rem; font-weight: 500;
+      cursor: pointer; transition: all 0.2s; color: var(--color-text);
     }
+    .cat-chip:hover, .cat-chip.active { background: var(--color-accent); border-color: var(--color-accent); color: white; }
 
-    .cat-chip:hover, .cat-chip.active {
-      background: var(--color-accent);
-      border-color: var(--color-accent);
-      color: white;
-    }
-
-    /* ===== NO RESULTS ===== */
-    .no-results {
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--color-text-light);
-      display: none;
-    }
-
+    .no-results { text-align: center; padding: 40px 20px; color: var(--color-text-light); display: none; }
     .no-results i { font-size: 2rem; margin-bottom: 10px; display: block; }
 
     /* ===== FOOTER ===== */
-    .footer {
-      background: var(--color-primary);
-      color: rgba(255,255,255,0.7);
-      text-align: center;
-      padding: 32px 20px;
-      margin-top: 40px;
-    }
-
-    .footer-logo {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 12px;
-      border: 2px solid var(--color-accent);
-      display: block;
-      background: var(--color-accent2);
-    }
-
-    .footer-name {
-      font-family: var(--font-title);
-      font-size: 1.4rem;
-      color: white;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-
-    .footer-social {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin: 12px 0;
-    }
-
-    .footer-social a {
-      color: rgba(255,255,255,0.6);
-      font-size: 1.1rem;
-      transition: color 0.2s;
-      text-decoration: none;
-    }
-
+    .footer { background: var(--color-primary); color: rgba(255,255,255,0.7); text-align: center; padding: 32px 20px; margin-top: 40px; }
+    .footer-name { font-family: var(--font-title); font-size: 1.4rem; color: white; letter-spacing: 1px; margin-bottom: 8px; }
+    .footer-social { display: flex; justify-content: center; gap: 12px; margin: 12px 0; }
+    .footer-social a { color: rgba(255,255,255,0.6); font-size: 1.1rem; transition: color 0.2s; text-decoration: none; }
     .footer-social a:hover { color: var(--color-accent); }
-
-    .footer-credit {
-      font-size: 0.72rem;
-      opacity: 0.4;
-      margin-top: 16px;
-    }
+    .footer-credit { font-size: 0.72rem; opacity: 0.4; margin-top: 16px; }
 
     /* ===== WHATSAPP FLOTANTE ===== */
     .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      right: 20px;
-      z-index: 150;
-      width: 56px;
-      height: 56px;
-      background: #25d366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      text-decoration: none;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      position: fixed; bottom: 24px; right: 20px; z-index: 150;
+      width: 56px; height: 56px; background: #25d366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; color: white;
+      font-size: 1.5rem; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
       transition: transform 0.2s;
     }
-
     .whatsapp-float:hover { transform: scale(1.1); }
 
-    /* ===== RESPONSIVE ===== */
-    @media (min-width: 480px) {
-      .products-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
-    }
-
+    @media (min-width: 480px) { .products-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); } }
     @media (min-width: 768px) {
       .products-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
       .store-name { font-size: 2.2rem; }
@@ -629,72 +278,54 @@
 <body>
 
 <!-- =============================================
-     HEADER - EDITA TU INFORMACIÓN AQUÍ
+     HEADER
      ============================================= -->
 <header class="header">
-
-  <!-- BANNER: reemplaza el src con la URL de tu imagen de portada, o borra el img y deja solo el div placeholder -->
   <div class="header-banner-placeholder">
-    <!-- Si tienes imagen de banner, usa esto: -->
-    <!-- <img class="header-banner" src="URL_DE_TU_BANNER.jpg" alt="banner"> -->
+    <!-- Si tienes imagen de banner descomenta esto y pon tu URL:
+    <img class="header-banner" src="URL_DE_TU_BANNER.jpg" alt="banner"> -->
   </div>
-
   <div class="header-content">
     <div class="header-top-row">
-
-      <!-- LOGO: reemplaza src con la URL de tu logo -->
       <div class="logo-container">
-        <!-- Con imagen: <img class="logo-img" src="URL_DE_TU_LOGO.png" alt="logo"> -->
-        <!-- Sin imagen (muestra iniciales): -->
-        <div class="logo-placeholder">MN</div>
+        <!-- Si tienes logo descomenta esto:
+        <img class="logo-img" src="URL_DE_TU_LOGO.png" alt="logo"> -->
+        <div class="logo-placeholder">RJ</div>
       </div>
-
       <div class="store-info">
-        <!-- NOMBRE DE TU TIENDA -->
-        <div class="store-name">Relojes Jack Caracas</div>
-
-        <!-- DESCRIPCIÓN -->
+        <div class="store-name">Relojes Jack</div>
         <div class="store-description">
-        🔥 Los Relojes mas trendy ✅<br>
-          Casio - Poedagar - Addiesdive - Pagani Design - Spetch & Sonhe - Steeldive
+          Relojes - Lo mas Trendy 🔥 Al mejor precio ✅<br>
+          Pedidos por encargo: Casio - Poedagar - Addiesdive - Pagani design - Steeldive - Speth and sonhe
         </div>
-
         <div class="store-meta">
-          <!-- TELÉFONO / WHATSAPP -->
           <div class="store-meta-item">
             <i class="fas fa-phone"></i>
-            <span>WhatsApp: 0412-969-5755</span>
+            <span>WhatsApp: +58 412-969-5755</span>
           </div>
-          <!-- DIRECCIÓN / ENVÍOS -->
           <div class="store-meta-item">
             <i class="fas fa-map-marker-alt"></i>
             <span>Entregas gratis en toda Caracas y Los Teques - Envíos nacionales: MRW - Zoom - Tealca</span>
           </div>
-          <!-- HORARIO / NOTA -->
           <div class="store-meta-item">
             <i class="far fa-clock"></i>
-            <span>Los Encargos llegan entre 30 a 45 dias, cancelas cuando llegue el reloj</span>
+            <span>Pedidos por encargo: aprox. 1 mes de espera</span>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- REDES SOCIALES: reemplaza # con tus URLs reales -->
     <div class="social-buttons">
-     <a class="social-btn" href="https://www.tiktok.com/@Relojesjack" title="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a class="social-btn" href="https://www.tiktok.com/@Relojesjack" title="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
       <a class="social-btn" href="https://www.instagram.com/relojesjack" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a class="social-btn" href="https://wa.me/0412.969.5755" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a class="social-btn" href="https://wa.me/584129695755" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
   </div>
 </header>
 
-<!-- =============================================
-     BARRA DE CATEGORÍAS (sticky)
-     ============================================= -->
+<!-- BARRA DE CATEGORÍAS -->
 <nav class="categories-bar" id="catBar">
   <button class="cat-btn-icon" onclick="scrollToTop()" title="Inicio"><i class="fas fa-home"></i></button>
   <button class="cat-btn-icon" onclick="openSearch()" title="Buscar"><i class="fas fa-search"></i></button>
-  <!-- Las categorías se generan automáticamente desde tus productos -->
 </nav>
 
 <!-- BÚSQUEDA -->
@@ -709,50 +340,52 @@
 </div>
 
 <!-- =============================================
-     PRODUCTOS - EDITA AQUÍ TU CATÁLOGO
-     ============================================= -->
+     PRODUCTOS
+     =============================================
+
+  CÓMO AGREGAR FOTOS MÚLTIPLES:
+  En data-images pon los links separados por coma, sin espacios entre ellos.
+  Ejemplo: data-images="https://link1.jpg,https://link2.jpg,https://link3.jpg"
+
+  Si el producto tiene solo una foto, pon solo un link.
+  Si no tiene foto, deja data-images vacío: data-images=""
+
+  La primera imagen también va en el src del <img> de la tarjeta
+  para que se vea en la grilla.
+============================================= -->
 <main class="main-content">
-
   <h2 class="section-title">Nuestros Productos</h2>
-
   <div class="products-grid" id="productsGrid">
 
-    <!--
-    ╔═══════════════════════════════════════════════════════╗
-    ║  INSTRUCCIONES PARA AGREGAR PRODUCTOS:                ║
-    ║                                                       ║
-    ║  Copia un bloque <div class="product-card">           ║
-    ║  y edita:                                             ║
-    ║   - data-category: la categoría del producto          ║
-    ║   - data-name: nombre (para búsqueda)                 ║
-    ║   - src de la imagen                                  ║
-    ║   - Nombre del producto                               ║
-    ║   - Precio                                            ║
-    ║   - El link de WhatsApp (cambia 58412000000           ║
-    ║     por tu número sin + ni espacios)                  ║
-    ╚═══════════════════════════════════════════════════════╝
-    -->
-
-    <!-- PRODUCTO 1 -->
-    <div class="product-card" data-category="cuarzo" data-name="addiesdive myh3 40mm cuarzo miyota 2115" onclick="openModal(this)">
+    <!-- PRODUCTO 1
+         INSTRUCCIÓN: Reemplaza los src y data-images con tus links de ImgBB -->
+    <div class="product-card"
+         data-category="cuarzo"
+         data-name="addiesdive myh3 40mm cuarzo miyota 2115"
+         data-images=""
+         data-desc="Reloj cuarzo Miyota 2115, caja 40mm, diseño deportivo elegante. Ideal para uso diario."
+         data-wa="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Addiesdive%20MYH3%20-%20$70"
+         onclick="openModal(this)">
       <div class="product-img-wrap">
         <div class="product-img-placeholder"><i class="fas fa-image"></i></div>
-        <!-- Con imagen: <img class="product-img" src="URL_IMAGEN.jpg" alt="producto"> -->
+        <!-- Con imagen: <img class="product-img" src="URL_FOTO_PRINCIPAL.jpg" alt="producto"> -->
       </div>
       <span class="product-category-badge">Cuarzo</span>
       <div class="product-info">
         <div class="product-name">Addiesdive MYH3 - 40mm - Cuarzo Miyota 2115</div>
         <div class="product-price">$ 70,00</div>
       </div>
-      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Addiesdive%20MYH3%20-%20$70" onclick="event.stopPropagation()" target="_blank" title="Consultar por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <!-- Datos ocultos para el modal -->
-      <span style="display:none" class="modal-data-desc">Reloj cuarzo Miyota 2115, caja 40mm, diseño deportivo elegante. Ideal para uso diario.</span>
+      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Addiesdive%20MYH3%20-%20$70" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <!-- PRODUCTO 2 -->
-    <div class="product-card" data-category="automaticos" data-name="pagani design pd-1783 nh36a automatico 40mm" onclick="openModal(this)">
+    <div class="product-card"
+         data-category="automaticos"
+         data-name="pagani design pd-1783 nh36a automatico 40mm"
+         data-images=""
+         data-desc="Movimiento automático NH36A, cristal zafiro, resistencia al agua 20ATM. Un reloj de coleccionista."
+         data-wa="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Pagani%20Design%20PD-1783%20-%20$130"
+         onclick="openModal(this)">
       <div class="product-img-wrap">
         <div class="product-img-placeholder"><i class="fas fa-image"></i></div>
       </div>
@@ -761,14 +394,17 @@
         <div class="product-name">Pagani Design PD-1783 - NH36A Automático - 40mm</div>
         <div class="product-price">$ 130,00</div>
       </div>
-      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Pagani%20Design%20PD-1783%20-%20$130" onclick="event.stopPropagation()" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <span style="display:none" class="modal-data-desc">Movimiento automático NH36A, cristal zafiro, resistencia al agua 20ATM. Un reloj de coleccionista.</span>
+      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Pagani%20Design%20PD-1783%20-%20$130" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <!-- PRODUCTO 3 -->
-    <div class="product-card" data-category="cuarzo" data-name="poedagar 821 cuarzo 40mm tifanny" onclick="openModal(this)">
+    <div class="product-card"
+         data-category="cuarzo"
+         data-name="poedagar 821 cuarzo 40mm tifanny"
+         data-images=""
+         data-desc="Elegante reloj cuarzo en color Tiffany, brazalete de acero inoxidable, dial luminoso."
+         data-wa="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20821%20-%20$25"
+         onclick="openModal(this)">
       <div class="product-img-wrap">
         <div class="product-img-placeholder"><i class="fas fa-image"></i></div>
       </div>
@@ -777,14 +413,17 @@
         <div class="product-name">Poedagar 821 - Cuarzo - 40mm - Tifanny</div>
         <div class="product-price">$ 25,00</div>
       </div>
-      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20821%20-%20$25" onclick="event.stopPropagation()" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <span style="display:none" class="modal-data-desc">Elegante reloj cuarzo en color Tiffany, brazalete de acero inoxidable, dial luminoso.</span>
+      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20821%20-%20$25" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <!-- PRODUCTO 4 -->
-    <div class="product-card" data-category="cuarzo" data-name="poedagar 839 cuarzo 40mm azul" onclick="openModal(this)">
+    <div class="product-card"
+         data-category="cuarzo"
+         data-name="poedagar 839 cuarzo 40mm azul"
+         data-images=""
+         data-desc="Dial azul profundo, movimiento cuarzo japonés, correa de acero. Perfecto para el trabajo y la noche."
+         data-wa="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20839%20Azul%20-%20$25"
+         onclick="openModal(this)">
       <div class="product-img-wrap">
         <div class="product-img-placeholder"><i class="fas fa-image"></i></div>
       </div>
@@ -793,14 +432,17 @@
         <div class="product-name">Poedagar 839 - Cuarzo - 40mm - Azul</div>
         <div class="product-price">$ 25,00</div>
       </div>
-      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20839%20Azul%20-%20$25" onclick="event.stopPropagation()" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <span style="display:none" class="modal-data-desc">Dial azul profundo, movimiento cuarzo japonés, correa de acero. Perfecto para el trabajo y la noche.</span>
+      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20839%20Azul%20-%20$25" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <!-- PRODUCTO 5 -->
-    <div class="product-card" data-category="cuarzo" data-name="poedagar 839 cuarzo 40mm celeste" onclick="openModal(this)">
+    <div class="product-card"
+         data-category="cuarzo"
+         data-name="poedagar 839 cuarzo 40mm celeste"
+         data-images=""
+         data-desc="Dial celeste luminoso, diseño fresco y moderno. Correa de acero inoxidable pulido."
+         data-wa="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20839%20Celeste%20-%20$25"
+         onclick="openModal(this)">
       <div class="product-img-wrap">
         <div class="product-img-placeholder"><i class="fas fa-image"></i></div>
       </div>
@@ -809,14 +451,17 @@
         <div class="product-name">Poedagar 839 - Cuarzo - 40mm - Celeste</div>
         <div class="product-price">$ 25,00</div>
       </div>
-      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20839%20Celeste%20-%20$25" onclick="event.stopPropagation()" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <span style="display:none" class="modal-data-desc">Dial celeste luminoso, diseño fresco y moderno. Correa de acero inoxidable pulido.</span>
+      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20839%20Celeste%20-%20$25" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <!-- PRODUCTO 6 -->
-    <div class="product-card" data-category="digitales" data-name="poedagar 930 cuarzo 40mm dial negro digital" onclick="openModal(this)">
+    <div class="product-card"
+         data-category="digitales"
+         data-name="poedagar 930 cuarzo 40mm dial negro"
+         data-images=""
+         data-desc="Elegante dial negro, acabado mate, perfecto para el día a día y eventos formales."
+         data-wa="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20930%20Negro%20-%20$25"
+         onclick="openModal(this)">
       <div class="product-img-wrap">
         <div class="product-img-placeholder"><i class="fas fa-image"></i></div>
       </div>
@@ -825,14 +470,17 @@
         <div class="product-name">Poedagar 930 - 40mm - Dial Negro</div>
         <div class="product-price">$ 25,00</div>
       </div>
-      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20930%20Negro%20-%20$25" onclick="event.stopPropagation()" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <span style="display:none" class="modal-data-desc">Elegante dial negro, acabado mate, perfecto para el día a día y eventos formales.</span>
+      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20930%20Negro%20-%20$25" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <!-- PRODUCTO 7 -->
-    <div class="product-card" data-category="digitales" data-name="poedagar 930 cuarzo 40mm dial blanco digital" onclick="openModal(this)">
+    <div class="product-card"
+         data-category="digitales"
+         data-name="poedagar 930 cuarzo 40mm dial blanco"
+         data-images=""
+         data-desc="Dial blanco clásico, diseño claro y elegante. Excelente visibilidad en cualquier condición de luz."
+         data-wa="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20930%20Blanco%20-%20$25"
+         onclick="openModal(this)">
       <div class="product-img-wrap">
         <div class="product-img-placeholder"><i class="fas fa-image"></i></div>
       </div>
@@ -841,13 +489,20 @@
         <div class="product-name">Poedagar 930 - 40mm - Dial Blanco</div>
         <div class="product-price">$ 25,00</div>
       </div>
-      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20930%20Blanco%20-%20$25" onclick="event.stopPropagation()" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <span style="display:none" class="modal-data-desc">Dial blanco clásico, diseño claro y elegante. Excelente visibilidad en cualquier condición de luz.</span>
+      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20930%20Blanco%20-%20$25" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
-    <!-- AGREGA MÁS PRODUCTOS AQUÍ - COPIA EL BLOQUE DE ARRIBA -->
+    <!-- ============================================
+         AGREGA MÁS PRODUCTOS AQUÍ
+         Copia el bloque de producto de arriba y edita:
+         - data-category
+         - data-name (en minúsculas, para búsqueda)
+         - data-images (links de ImgBB separados por coma)
+         - data-desc
+         - data-wa (cambia el texto del mensaje)
+         - product-name, product-price
+         - El src del img (si tienes foto)
+    ============================================= -->
 
   </div>
 
@@ -856,22 +511,32 @@
     <p>No se encontraron productos</p>
   </div>
 
-  <!-- SECCIÓN DE CATEGORÍAS -->
   <div class="categories-section">
     <h2 class="section-title">Categorías</h2>
-    <div class="cat-chips" id="catChips">
-      <!-- Se generan automáticamente -->
-    </div>
+    <div class="cat-chips" id="catChips"></div>
   </div>
-
 </main>
 
-<!-- MODAL DE PRODUCTO -->
+<!-- =============================================
+     MODAL CON CARRUSEL
+     ============================================= -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
   <div class="modal" id="modal">
     <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
     <div style="clear:both"></div>
-    <img class="modal-img" id="modalImg" src="" alt="">
+
+    <!-- Carrusel -->
+    <div class="carousel-wrap">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="carouselTrack"></div>
+        <button class="carousel-arrow prev" id="arrowPrev" onclick="carouselMove(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-arrow next" id="arrowNext" onclick="carouselMove(1)"><i class="fas fa-chevron-right"></i></button>
+        <div class="carousel-counter" id="carouselCounter"></div>
+      </div>
+      <!-- Miniaturas -->
+      <div class="carousel-thumbs" id="carouselThumbs"></div>
+    </div>
+
     <div class="modal-name" id="modalName"></div>
     <div class="modal-price" id="modalPrice"></div>
     <div class="modal-description" id="modalDesc"></div>
@@ -881,18 +546,16 @@
   </div>
 </div>
 
-<!-- =============================================
-     FOOTER - EDITA TU INFORMACIÓN
-     ============================================= -->
+<!-- FOOTER -->
 <footer class="footer">
-  <div class="logo-placeholder footer-logo" style="display:flex; align-items:center; justify-content:center; font-family:var(--font-title); font-size:1.2rem; color:white;">MN</div>
-  <div class="footer-name">Mi Negocio</div>
+  <div class="logo-placeholder" style="width:60px;height:60px;border-radius:50%;background:var(--color-accent2);border:2px solid var(--color-accent);display:flex;align-items:center;justify-content:center;font-family:var(--font-title);font-size:1.2rem;color:white;margin:0 auto 12px;">RJ</div>
+  <div class="footer-name">Relojes Jack</div>
   <div class="footer-social">
-    <a href="#"><i class="fab fa-tiktok"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="https://wa.me/584129695755"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.tiktok.com/@Relojesjack" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.instagram.com/relojesjack" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/584129695755" target="_blank"><i class="fab fa-whatsapp"></i></a>
   </div>
-  <div class="footer-credit">Catálogo creado con HTML estático · Hosted en GitHub Pages</div>
+  <div class="footer-credit">Relojes Jack · Caracas · Catálogo Online</div>
 </footer>
 
 <!-- BOTÓN WHATSAPP FLOTANTE -->
@@ -900,37 +563,23 @@
   <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- =============================================
-     JAVASCRIPT - No necesitas editar esto
-     ============================================= -->
 <script>
-  // ── Leer todos los productos y construir categorías ──
-  function getProducts() {
-    return Array.from(document.querySelectorAll('.product-card'));
-  }
+  // ── Categorías ──
+  function getProducts() { return Array.from(document.querySelectorAll('.product-card')); }
 
   function buildCategoryBar() {
     const cats = new Set(['todos']);
-    getProducts().forEach(p => {
-      const c = p.dataset.category;
-      if (c) cats.add(c);
-    });
-
+    getProducts().forEach(p => { if (p.dataset.category) cats.add(p.dataset.category); });
     const bar = document.getElementById('catBar');
     const chips = document.getElementById('catChips');
     chips.innerHTML = '';
-
     cats.forEach(cat => {
-      const label = cat === 'todos' ? 'Todos' : capitalize(cat);
-
-      // Barra sticky
+      const label = capitalize(cat);
       const btn = document.createElement('button');
       btn.className = 'cat-btn' + (cat === 'todos' ? ' active' : '');
       btn.textContent = label;
       btn.onclick = () => filterCategory(cat);
       bar.appendChild(btn);
-
-      // Chips de categorías
       const chip = document.createElement('div');
       chip.className = 'cat-chip' + (cat === 'todos' ? ' active' : '');
       chip.textContent = label;
@@ -940,37 +589,26 @@
   }
 
   function capitalize(str) {
-    const map = { 'cuarzo':'Cuarzo', 'automaticos':'Automáticos', 'digitales':'Digitales' };
+    const map = { 'todos':'Todos', 'cuarzo':'Cuarzo', 'automaticos':'Automáticos', 'digitales':'Digitales' };
     return map[str] || str.charAt(0).toUpperCase() + str.slice(1);
   }
 
-  let currentCategory = 'todos';
-  let currentSearch = '';
+  let currentCategory = 'todos', currentSearch = '';
 
   function filterCategory(cat) {
-    currentCategory = cat;
-    currentSearch = '';
+    currentCategory = cat; currentSearch = '';
     document.getElementById('searchInput').value = '';
-    closeSearch();
-    applyFilters();
-
-    // Actualizar botones activos
-    document.querySelectorAll('.cat-btn').forEach(b => {
-      b.classList.toggle('active', b.textContent.trim().toLowerCase() === cat ||
-        (cat === 'todos' && b.textContent.trim() === 'Todos'));
-    });
-    document.querySelectorAll('.cat-chip').forEach(b => {
-      b.classList.toggle('active', b.textContent.trim().toLowerCase() === cat ||
-        (cat === 'todos' && b.textContent.trim() === 'Todos'));
-    });
+    closeSearch(); applyFilters();
+    document.querySelectorAll('.cat-btn').forEach(b =>
+      b.classList.toggle('active', b.textContent.trim() === capitalize(cat)));
+    document.querySelectorAll('.cat-chip').forEach(b =>
+      b.classList.toggle('active', b.textContent.trim() === capitalize(cat)));
   }
 
   function filterSearch(query) {
-    currentSearch = query.toLowerCase().trim();
-    applyFilters();
+    currentSearch = query.toLowerCase().trim(); applyFilters();
     const count = getProducts().filter(p => !p.classList.contains('hidden')).length;
-    document.getElementById('searchCount').textContent =
-      currentSearch ? `${count} resultado(s) encontrado(s)` : '';
+    document.getElementById('searchCount').textContent = currentSearch ? `${count} resultado(s)` : '';
   }
 
   function applyFilters() {
@@ -978,48 +616,113 @@
     getProducts().forEach(p => {
       const matchCat = currentCategory === 'todos' || p.dataset.category === currentCategory;
       const matchSearch = !currentSearch || p.dataset.name.includes(currentSearch);
-      const show = matchCat && matchSearch;
-      p.classList.toggle('hidden', !show);
-      if (show) visible++;
+      p.classList.toggle('hidden', !(matchCat && matchSearch));
+      if (matchCat && matchSearch) visible++;
     });
     document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
   }
 
   // ── Búsqueda ──
-  function openSearch() {
-    document.getElementById('searchOverlay').classList.add('open');
-    setTimeout(() => document.getElementById('searchInput').focus(), 100);
+  function openSearch() { document.getElementById('searchOverlay').classList.add('open'); setTimeout(() => document.getElementById('searchInput').focus(), 100); }
+  function closeSearch() { document.getElementById('searchOverlay').classList.remove('open'); }
+  function closeSearchOutside(e) { if (e.target === document.getElementById('searchOverlay')) closeSearch(); }
+
+  // ── Carrusel ──
+  let carouselImages = [];
+  let carouselIndex = 0;
+
+  function buildCarousel(images) {
+    carouselImages = images;
+    carouselIndex = 0;
+    const track = document.getElementById('carouselTrack');
+    const thumbs = document.getElementById('carouselThumbs');
+    track.innerHTML = '';
+    thumbs.innerHTML = '';
+
+    if (images.length === 0) {
+      // Sin imágenes
+      track.innerHTML = `<div class="carousel-slide"><div class="no-img"><i class="fas fa-image"></i><span>Sin imagen</span></div></div>`;
+      thumbs.style.display = 'none';
+      document.getElementById('arrowPrev').classList.add('hidden');
+      document.getElementById('arrowNext').classList.add('hidden');
+      document.getElementById('carouselCounter').style.display = 'none';
+      return;
+    }
+
+    thumbs.style.display = images.length > 1 ? 'flex' : 'none';
+    document.getElementById('arrowPrev').classList.toggle('hidden', images.length <= 1);
+    document.getElementById('arrowNext').classList.toggle('hidden', images.length <= 1);
+    document.getElementById('carouselCounter').style.display = images.length > 1 ? 'block' : 'none';
+
+    images.forEach((src, i) => {
+      // Slide
+      const slide = document.createElement('div');
+      slide.className = 'carousel-slide';
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `Foto ${i + 1}`;
+      slide.appendChild(img);
+      track.appendChild(slide);
+
+      // Miniatura
+      const thumb = document.createElement('div');
+      thumb.className = 'carousel-thumb' + (i === 0 ? ' active' : '');
+      const tImg = document.createElement('img');
+      tImg.src = src;
+      tImg.alt = `Miniatura ${i + 1}`;
+      thumb.appendChild(tImg);
+      thumb.onclick = () => goToSlide(i);
+      thumbs.appendChild(thumb);
+    });
+
+    updateCarousel();
   }
 
-  function closeSearch() {
-    document.getElementById('searchOverlay').classList.remove('open');
+  function updateCarousel() {
+    document.getElementById('carouselTrack').style.transform = `translateX(-${carouselIndex * 100}%)`;
+    document.getElementById('carouselCounter').textContent = `${carouselIndex + 1} / ${carouselImages.length}`;
+    document.querySelectorAll('.carousel-thumb').forEach((t, i) =>
+      t.classList.toggle('active', i === carouselIndex));
+    document.getElementById('arrowPrev').classList.toggle('hidden', carouselIndex === 0);
+    document.getElementById('arrowNext').classList.toggle('hidden', carouselIndex === carouselImages.length - 1);
   }
 
-  function closeSearchOutside(e) {
-    if (e.target === document.getElementById('searchOverlay')) closeSearch();
+  function carouselMove(dir) {
+    const newIndex = carouselIndex + dir;
+    if (newIndex >= 0 && newIndex < carouselImages.length) {
+      carouselIndex = newIndex;
+      updateCarousel();
+    }
   }
+
+  function goToSlide(i) {
+    carouselIndex = i;
+    updateCarousel();
+  }
+
+  // Swipe táctil en el carrusel
+  let touchStartX = 0;
+  document.getElementById('carouselTrack').addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  document.getElementById('carouselTrack').addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) carouselMove(diff > 0 ? 1 : -1);
+  });
 
   // ── Modal ──
   function openModal(card) {
     const name = card.querySelector('.product-name').textContent.trim();
     const price = card.querySelector('.product-price').textContent.trim();
-    const imgEl = card.querySelector('img.product-img');
-    const descEl = card.querySelector('.modal-data-desc');
-    const waEl = card.querySelector('.whatsapp-btn');
+    const desc = card.dataset.desc || '';
+    const wa = card.dataset.wa || '#';
+    const imagesRaw = card.dataset.images || '';
+    const images = imagesRaw ? imagesRaw.split(',').map(s => s.trim()).filter(Boolean) : [];
 
     document.getElementById('modalName').textContent = name;
     document.getElementById('modalPrice').textContent = price;
-    document.getElementById('modalDesc').textContent = descEl ? descEl.textContent : '';
-    document.getElementById('modalWa').href = waEl ? waEl.href : '#';
+    document.getElementById('modalDesc').textContent = desc;
+    document.getElementById('modalWa').href = wa;
 
-    const modalImg = document.getElementById('modalImg');
-    if (imgEl) {
-      modalImg.src = imgEl.src;
-      modalImg.style.display = 'block';
-    } else {
-      modalImg.style.display = 'none';
-    }
-
+    buildCarousel(images);
     document.getElementById('modalOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -1029,24 +732,13 @@
     document.body.style.overflow = '';
   }
 
-  function closeModalOutside(e) {
-    if (e.target === document.getElementById('modalOverlay')) closeModal();
-  }
+  function closeModalOutside(e) { if (e.target === document.getElementById('modalOverlay')) closeModal(); }
 
-  // ── Scroll top ──
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    filterCategory('todos');
-  }
+  function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); filterCategory('todos'); }
 
-  // ── Cerrar modal con ESC ──
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeModal(); closeSearch(); }
-  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeSearch(); } });
 
-  // ── Init ──
   buildCategoryBar();
 </script>
-
 </body>
 </html>
