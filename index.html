@@ -77,20 +77,52 @@
       z-index: 5;
       padding: 0;
     }
-    .social-btn {
-      width: 36px; height: 36px; border-radius: 50%; background: rgba(1,17,36,0.7);
-      border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center;
-      color: var(--color-white); text-decoration: none; font-size: 0.9rem; transition: all 0.2s; cursor: pointer;
+    .banner-nav-buttons {
+      position: absolute;
+      top: 0; left: 12px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 5;
     }
+@media (min-width: 960px) {
+  .banner-nav-buttons { left: calc(50% - 480px + 16px); }
+  .social-buttons { right: calc(50% - 480px + 16px); }
+}
+    .social-btn {
+      width: 40px; height: 40px; border-radius: 50%; background: rgba(1,17,36,0.7);
+      border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center;
+      color: var(--color-white); text-decoration: none; font-size: 1.2rem; transition: all 0.2s; cursor: pointer;
+    }
+    @media (min-width: 768px) {
+  .social-btn { width: 50px; height: 50px; font-size: 1.3rem; }
+}
     .social-btn:hover { background: var(--color-accent3); border-color: var(--color-accent); }
 
     /* ===== CATEGORÍAS STICKY ===== */
-    .categories-bar {
+    .categories-bar-wrap {
       position: sticky; top: 0; z-index: 100; background: var(--color-primary);
-      padding: 10px 16px; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.2); justify-content: flex-start;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .categories-bar-label {
+      text-align: center; font-size: 0.65rem; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; color: rgba(255,255,255,0.4); padding: 6px 0 0;
+    }
+    .categories-bar {
+      padding: 6px 16px 10px; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none;
+      justify-content: flex-start;
+    }
+@media (min-width: 768px) {
+      .categories-bar { justify-content: center; }
     }
     .categories-bar::-webkit-scrollbar { display: none; }
+    .categories-bar-wrap::after {
+      content: ''; position: absolute; right: 0; top: 0;
+      width: 80px; height: 100%; pointer-events: none;
+      background: linear-gradient(to right, transparent, var(--color-primary));
+      z-index: 2;
+    }
     .cat-btn {
       flex-shrink: 0; padding: 7px 16px; border-radius: 20px; border: none;
       font-family: var(--font-body); font-size: 0.82rem; font-weight: 500; cursor: pointer;
@@ -125,6 +157,12 @@
 
     /* ===== MAIN CONTENT ===== */
     .main-content { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+    @media (min-width: 1100px) {
+      .main-content { max-width: 1200px; }
+    }
+    @media (min-width: 1400px) {
+      .main-content { max-width: 1400px; }
+    }
     .section-title {
       font-family: var(--font-title); font-size: 1.8rem; letter-spacing: 1px; margin-bottom: 20px;
       color: var(--color-text); display: flex; align-items: center; gap: 10px;
@@ -135,7 +173,7 @@
     }
 
     /* ===== PRODUCT GRID ===== */
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 32px; }
     .product-card {
       background: var(--color-card); border-radius: var(--radius); overflow: hidden;
       box-shadow: var(--shadow); cursor: pointer; transition: all 0.25s; position: relative;
@@ -288,12 +326,16 @@
     }
     .whatsapp-float:hover { transform: scale(1.1); }
 
-    @media (min-width: 480px) { .products-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); } }
+    @media (min-width: 480px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 640px) { .products-grid { grid-template-columns: repeat(3, 1fr); } }
     @media (min-width: 768px) {
-      .products-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+      .products-grid { grid-template-columns: repeat(4, 1fr); }
       .store-name { font-size: 1.7rem; }
       .modal { border-radius: var(--radius); }
       .modal-overlay { align-items: center; }
+    }
+    @media (min-width: 1100px) {
+      .products-grid { grid-template-columns: repeat(5, 1fr); }
     }
   </style>
 </head>
@@ -306,6 +348,12 @@
   <!-- BANNER: para poner imagen real descomenta el img y borra el div placeholder -->
   <div class="header-banner-placeholder">
     <!-- <img class="header-banner-img" src="URL_DE_TU_BANNER.jpg" alt="banner"> -->
+    <!-- Botones izquierda: inicio y búsqueda -->
+    <div class="banner-nav-buttons">
+      <button class="social-btn" onclick="scrollToTop()" title="Inicio"><i class="fas fa-home"></i></button>
+      <button class="social-btn" onclick="openSearch()" title="Buscar"><i class="fas fa-search"></i></button>
+    </div>
+    <!-- Botones derecha: redes sociales -->
     <div class="social-buttons">
       <a class="social-btn" href="https://www.tiktok.com/@Relojesjack" title="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
       <a class="social-btn" href="https://www.instagram.com/relojesjack" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -323,7 +371,7 @@
     <div class="store-name">Relojes Jack</div>
     <div class="store-description">
       Tienda Online - Lo mas Trendy 🔥<br>
-      Casio - Poedagar - Addiesdive - Pagani design - Steeldive - Speth and sonhe
+      Casio - Poedagar - Addiesdive - Pagani design
     </div>
     <div class="store-meta">
       <div class="store-meta-item">
@@ -332,20 +380,20 @@
       </div>
       <div class="store-meta-item">
         <i class="fas fa-map-marker-alt"></i>
-        <span>Entregas gratis en toda Caracas - Envíos nacionales: Mrw - Zoom</span>
+        <span>Entregas gratis en toda Caracas</span>
       </div>
       <div class="store-meta-item">
         <i class="far fa-clock"></i>
-        <span>Pedidos por encargo: de 30 a 45 días de espera</span>
+        <span>Pedidos por encargo: de 30 a 45 días</span>
       </div>
     </div>
   </div>
 </header>
 
 <!-- BARRA DE CATEGORÍAS -->
-<nav class="categories-bar" id="catBar">
-  <button class="cat-btn-icon" onclick="scrollToTop()" title="Inicio"><i class="fas fa-home"></i></button>
-  <button class="cat-btn-icon" onclick="openSearch()" title="Buscar"><i class="fas fa-search"></i></button>
+<nav class="categories-bar-wrap">
+  <div class="categories-bar-label">Filtrar productos</div>
+  <div class="categories-bar" id="catBar"></div>
 </nav>
 
 <!-- BÚSQUEDA -->
@@ -376,9 +424,26 @@
 <main class="main-content">
   <h2 class="section-title">Productos Disponibles</h2>
   <div class="products-grid" id="productsGrid">
-
-    <!-- PRODUCTO 1
-         INSTRUCCIÓN: Reemplaza los src y data-images con tus links de ImgBB -->
+    
+    <!-- Pagani Day-Date Azul -->
+    <div class="product-card"
+         data-category="automaticos,pagani design,hombre"
+         data-name="pagani design pd-1783 nh36a automatico 40mm"
+         data-images="https://res.cloudinary.com/df6vfbjug/image/upload/v1780360056/1783_pagani_azul_web_principal_bsskuo.webp,https://res.cloudinary.com/df6vfbjug/image/upload/v1780360056/Ficha_te%CC%81cnica_de_reloj_Pagani_Design_P.D._17_83_bqt0a0.webp"
+         data-desc="Movimiento automático NH36A, cristal zafiro, resistencia al agua 20ATM. Un reloj de coleccionista."
+         data-wa="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Pagani%20Design%20PD-1783%20-%20$130"
+         onclick="openModal(this)">
+      <div class="product-img-wrap">
+        <img class="product-img" src="https://res.cloudinary.com/df6vfbjug/image/upload/v1780360056/1783_pagani_azul_web_principal_bsskuo.webp" alt="Pagani Day-Date Azul">
+      </div>
+      <span class="product-category-badge">Automáticos</span>
+      <div class="product-info">
+        <div class="product-name">Pagani Design PD-1783 - NH36A Automático - 40mm</div>
+        <div class="product-price">$ 130,00</div>
+      </div>
+      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Pagani%20Design%20PD-1783%20-%20$130" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <!-- Addiesdive Starbucks -->
     <div class="product-card"
          data-category="cuarzo,hombre,addiesdive"
          data-name="addiesdive myh3 40mm cuarzo miyota 2115"
@@ -398,26 +463,7 @@
       <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Addiesdive%20MYH3%20-%20$70" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
-    <!-- PRODUCTO 2 -->
-    <div class="product-card"
-         data-category="automaticos,pagani design,hombre"
-         data-name="pagani design pd-1783 nh36a automatico 40mm"
-         data-images="https://res.cloudinary.com/df6vfbjug/image/upload/v1780360056/1783_pagani_azul_web_principal_bsskuo.webp,https://res.cloudinary.com/df6vfbjug/image/upload/v1780360056/Ficha_te%CC%81cnica_de_reloj_Pagani_Design_P.D._17_83_bqt0a0.webp"
-         data-desc="Movimiento automático NH36A, cristal zafiro, resistencia al agua 20ATM. Un reloj de coleccionista."
-         data-wa="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Pagani%20Design%20PD-1783%20-%20$130"
-         onclick="openModal(this)">
-      <div class="product-img-wrap">
-        <img class="product-img" src="https://res.cloudinary.com/df6vfbjug/image/upload/v1780360056/1783_pagani_azul_web_principal_bsskuo.webp" alt="Pagani Day-Date Azul">
-      </div>
-      <span class="product-category-badge">Automáticos</span>
-      <div class="product-info">
-        <div class="product-name">Pagani Design PD-1783 - NH36A Automático - 40mm</div>
-        <div class="product-price">$ 130,00</div>
-      </div>
-      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Pagani%20Design%20PD-1783%20-%20$130" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
-
-    <!-- PRODUCTO 3 -->
+    <!-- Poedagar 821 Tifanny -->
     <div class="product-card"
          data-category="cuarzo,hombre,poedagar"
          data-name="poedagar 821 cuarzo 40mm tifanny"
@@ -436,7 +482,7 @@
       <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20821%20-%20$25" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
-    <!-- PRODUCTO 4 -->
+    <!-- Poedagar 839 Azul -->
     <div class="product-card"
          data-category="cuarzo,hombre,poedagar"
          data-name="poedagar 839 cuarzo 40mm azul"
@@ -445,7 +491,7 @@
          data-wa="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20839%20Azul%20-%20$25"
          onclick="openModal(this)">
       <div class="product-img-wrap">
-        <img class="product-img" src="https://res.cloudinary.com/df6vfbjug/image/upload/v1780363136/839_principal_azul_ku2eql.jpg" alt="Poedagar 839 Azul ">
+        <img class="product-img" src="https://res.cloudinary.com/df6vfbjug/image/upload/v1780363136/839_principal_azul_ku2eql.jpg" alt="Poedagar 839 Azul">
       </div>
       <span class="product-category-badge">Cuarzo</span>
       <div class="product-info">
@@ -455,7 +501,7 @@
       <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20839%20Azul%20-%20$25" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
-    <!-- PRODUCTO 5 -->
+    <!-- Poedagar 839 Celeste -->
     <div class="product-card"
          data-category="cuarzo,hombre,poedagar"
          data-name="poedagar 839 cuarzo 40mm celeste"
@@ -474,7 +520,7 @@
       <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20839%20Celeste%20-%20$25" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
-    <!-- PRODUCTO 6 -->
+    <!-- Poedagar 930 Negro -->
 <div class="product-card"
      data-category="cuarzo,hombre,poedagar"
      data-name="poedagar 930 cuarzo 40mm dial negro"
@@ -493,7 +539,7 @@
   <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20930%20Negro%20-%20$25" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
 </div>
 
-    <!-- PRODUCTO 7 -->
+    <!-- Poedagar 930 Blanco -->
     <div class="product-card"
          data-category="cuarzo,hombre,poedagar"
          data-name="poedagar 930 cuarzo 40mm dial blanco"
@@ -597,10 +643,10 @@
   function buildCategoryBar() {
     const allCats = new Set();
     getProducts().forEach(p => getProductCats(p).forEach(c => allCats.add(c)));
-    // Ordenar según CATEGORY_ORDER, ignorar las que no están definidas
     const cats = CATEGORY_ORDER.filter(c => c === 'todos' || allCats.has(c));
     const bar = document.getElementById('catBar');
     const chips = document.getElementById('catChips');
+    bar.innerHTML = '';
     chips.innerHTML = '';
     cats.forEach(cat => {
       const label = capitalize(cat);
@@ -641,8 +687,13 @@ const CATEGORY_ORDER = [
     currentCategory = cat; currentSearch = '';
     document.getElementById('searchInput').value = '';
     closeSearch(); applyFilters();
-    document.querySelectorAll('.cat-btn').forEach(b =>
-      b.classList.toggle('active', b.textContent.trim() === capitalize(cat)));
+    document.querySelectorAll('.cat-btn').forEach(b => {
+      const isActive = b.textContent.trim() === capitalize(cat);
+      b.classList.toggle('active', isActive);
+      if (isActive) {
+        b.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    });
     document.querySelectorAll('.cat-chip').forEach(b =>
       b.classList.toggle('active', b.textContent.trim() === capitalize(cat)));
   }
