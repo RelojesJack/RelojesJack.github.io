@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Relojes Jack - Caracas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
       --color-primary: #1a1a2e;
-      --color-accent: #00c9b1;
+      --color-accent: #00c951;
       --color-accent2: #011124;
       --color-accent3: #007e6f;
       --color-bg: #f4f4f8;
@@ -18,7 +18,7 @@
       --color-text: #1a1a2e;
       --color-text-light: #6b7280;
       --color-white: #ffffff;
-      --font-title: 'Bebas Neue', sans-serif;
+      --font-title: 'Montserrat', sans-serif;
       --font-body: 'DM Sans', sans-serif;
       --radius: 12px;
       --shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -49,7 +49,7 @@
       margin-bottom: 10px;
     }
     .logo-img {
-      width: 88px; height: 88px; border-radius: 50%; object-fit: cover;
+      width: 100px; height: 100px; border-radius: 50%; object-fit: cover;
       border: 3px solid var(--color-accent);
       background: var(--color-primary);
       box-shadow: 0 4px 20px rgba(0,0,0,0.4);
@@ -88,7 +88,7 @@
     .categories-bar {
       position: sticky; top: 0; z-index: 100; background: var(--color-primary);
       padding: 10px 16px; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2); justify-content: center;
     }
     .categories-bar::-webkit-scrollbar { display: none; }
     .cat-btn {
@@ -291,7 +291,7 @@
     @media (min-width: 480px) { .products-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); } }
     @media (min-width: 768px) {
       .products-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-      .store-name { font-size: 2.2rem; }
+      .store-name { font-size: 1.7rem; }
       .modal { border-radius: var(--radius); }
       .modal-overlay { align-items: center; }
     }
@@ -332,7 +332,7 @@
       </div>
       <div class="store-meta-item">
         <i class="fas fa-map-marker-alt"></i>
-        <span>Entregas gratis en toda Caracas y Los Teques - Envíos nacionales: MRW - Zoom - Tealca</span>
+        <span>Entregas gratis en toda Caracas - Envíos nacionales: Mrw - Zoom</span>
       </div>
       <div class="store-meta-item">
         <i class="far fa-clock"></i>
@@ -380,7 +380,7 @@
     <!-- PRODUCTO 1
          INSTRUCCIÓN: Reemplaza los src y data-images con tus links de ImgBB -->
     <div class="product-card"
-         data-category="cuarzo"
+         data-category="cuarzo,hombre,addiesdive"
          data-name="addiesdive myh3 40mm cuarzo miyota 2115"
          data-images="https://res.cloudinary.com/df6vfbjug/image/upload/v1780356936/MY-H3_starbucks_principal_jyc8rj.jpg , https://res.cloudinary.com/df6vfbjug/image/upload/v1780356950/mediadas_submariner_verdenegro_lkbc9y.jpg , https://res.cloudinary.com/df6vfbjug/image/upload/v1780356954/Imagen_addiesdive_sub_hulk_sumerg_ia9ysn.jpg , https://res.cloudinary.com/df6vfbjug/image/upload/v1780357395/Addiesdive_submariber_opciones_de_color_4_colores_qahfuv.webp"
          data-desc="Reloj cuarzo Miyota 2115, caja 40mm, Bisel de Cerámica, Resistencia al agua de 200m. Apto para sumergir bajo el Agua"
@@ -400,7 +400,7 @@
 
     <!-- PRODUCTO 2 -->
     <div class="product-card"
-         data-category="automaticos"
+         data-category="automaticos,pagani design,hombre"
          data-name="pagani design pd-1783 nh36a automatico 40mm"
          data-images="https://res.cloudinary.com/df6vfbjug/image/upload/v1780360056/1783_pagani_azul_web_principal_bsskuo.webp,https://res.cloudinary.com/df6vfbjug/image/upload/v1780360056/Ficha_te%CC%81cnica_de_reloj_Pagani_Design_P.D._17_83_bqt0a0.webp"
          data-desc="Movimiento automático NH36A, cristal zafiro, resistencia al agua 20ATM. Un reloj de coleccionista."
@@ -419,7 +419,7 @@
 
     <!-- PRODUCTO 3 -->
     <div class="product-card"
-         data-category="cuarzo"
+         data-category="cuarzo,hombre,poedagar"
          data-name="poedagar 821 cuarzo 40mm tifanny"
          data-images="https://res.cloudinary.com/df6vfbjug/image/upload/v1780363121/821_tifanny_principal_acc0mh.jpg"
          data-desc="Elegante reloj cuarzo en color Tiffany, brazalete de acero inoxidable, dial luminoso."
@@ -438,7 +438,7 @@
 
     <!-- PRODUCTO 4 -->
     <div class="product-card"
-         data-category="cuarzo"
+         data-category="cuarzo,hombre,poedagar"
          data-name="poedagar 839 cuarzo 40mm azul"
          data-images="https://res.cloudinary.com/df6vfbjug/image/upload/v1780363136/839_principal_azul_ku2eql.jpg"
          data-desc="Dial azul profundo, movimiento cuarzo japonés, correa de acero. Perfecto para el trabajo y la noche."
@@ -457,7 +457,7 @@
 
     <!-- PRODUCTO 5 -->
     <div class="product-card"
-         data-category="cuarzo"
+         data-category="cuarzo,hombre,poedagar"
          data-name="poedagar 839 cuarzo 40mm celeste"
          data-images="https://res.cloudinary.com/df6vfbjug/image/upload/v1780363160/839_principal_celeste_v7ehme.jpg"
          data-desc="Dial celeste luminoso, diseño fresco y moderno. Correa de acero inoxidable pulido."
@@ -476,7 +476,7 @@
 
     <!-- PRODUCTO 6 -->
 <div class="product-card"
-     data-category="cuarzo"
+     data-category="cuarzo,hombre,poedagar"
      data-name="poedagar 930 cuarzo 40mm dial negro"
      data-images="https://res.cloudinary.com/df6vfbjug/image/upload/v1780351415/Principal_twwvi6.jpg,https://res.cloudinary.com/df6vfbjug/image/upload/v1780351415/Negro_6_wpzfv3.webp"
      data-desc="Elegante dial negro, acabado mate, perfecto para el día a día y eventos formales."
@@ -495,7 +495,7 @@
 
     <!-- PRODUCTO 7 -->
     <div class="product-card"
-         data-category="cuarzo"
+         data-category="cuarzo,hombre,poedagar"
          data-name="poedagar 930 cuarzo 40mm dial blanco"
          data-images="https://res.cloudinary.com/df6vfbjug/image/upload/v1780363177/Poedagar_930_blanco_portada_njwpgk.jpg"
          data-desc="Dial blanco clásico, diseño claro y elegante. Excelente visibilidad en cualquier condición de luz."
@@ -584,12 +584,21 @@
 </a>
 
 <script>
-  // ── Categorías ──
+  // ── Categorías (soporte múltiple) ──
   function getProducts() { return Array.from(document.querySelectorAll('.product-card')); }
 
+  function getProductCats(p) {
+    const multi = p.dataset.categories;
+    const single = p.dataset.category;
+    const raw = multi || single || '';
+    return raw.split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+  }
+
   function buildCategoryBar() {
-    const cats = new Set(['todos']);
-    getProducts().forEach(p => { if (p.dataset.category) cats.add(p.dataset.category); });
+    const allCats = new Set();
+    getProducts().forEach(p => getProductCats(p).forEach(c => allCats.add(c)));
+    // Ordenar según CATEGORY_ORDER, ignorar las que no están definidas
+    const cats = CATEGORY_ORDER.filter(c => c === 'todos' || allCats.has(c));
     const bar = document.getElementById('catBar');
     const chips = document.getElementById('catChips');
     chips.innerHTML = '';
@@ -607,7 +616,20 @@
       chips.appendChild(chip);
     });
   }
-
+// ── ORDEN Y NOMBRES DE CATEGORÍAS ──
+// Solo aparecen las que están aquí, en este orden exacto.
+// Si no quieres mostrar una categoría, simplemente bórrala o comenta la línea.
+const CATEGORY_ORDER = [
+  'todos',
+  'cuarzo',
+  'automaticos',
+  'hombre',
+  'poedagar',
+  'addiesdive',
+  'pagani design',
+  'casio',
+  'steeldive',
+];
   function capitalize(str) {
     const map = { 'todos':'Todos', 'cuarzo':'Cuarzo', 'automaticos':'Automáticos', 'digitales':'Digitales' };
     return map[str] || str.charAt(0).toUpperCase() + str.slice(1);
@@ -634,7 +656,7 @@
   function applyFilters() {
     let visible = 0;
     getProducts().forEach(p => {
-      const matchCat = currentCategory === 'todos' || p.dataset.category === currentCategory;
+      const matchCat = currentCategory === 'todos' || getProductCats(p).includes(currentCategory);
       const matchSearch = !currentSearch || p.dataset.name.includes(currentSearch);
       p.classList.toggle('hidden', !(matchCat && matchSearch));
       if (matchCat && matchSearch) visible++;
