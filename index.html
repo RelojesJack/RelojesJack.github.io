@@ -29,36 +29,48 @@
     body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-text); }
 
     /* ===== HEADER ===== */
-    .header { background: var(--color-primary); color: var(--color-white); position: relative; overflow: hidden; }
-    .header-banner { width: 100%; height: 160px; object-fit: cover; display: block; opacity: 0.7; }
+    .header { background: var(--color-primary); color: var(--color-white); position: relative; overflow: visible; }
     .header-banner-placeholder {
-      width: 100%; height: 75px;
+      width: 100%; height: 120px;
       background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent2) 50%, var(--color-accent) 100%);
-      display: flex; align-items: center; justify-content: center; position: relative;
+      position: relative; overflow: hidden;
+    }
+    .header-banner-img {
+      width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.75;
     }
     .header-banner-placeholder::after {
       content: ''; position: absolute; inset: 0;
       background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 20px);
     }
-    .header-content { padding: 20px 20px 0; position: relative; }
-    .header-top-row { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
-    .logo-container { flex-shrink: 0; }
-    .logo-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-accent); background: var(--color-accent2); }
+    /* Logo centrado flotando entre banner y contenido */
+    .logo-centered {
+      display: flex; justify-content: center;
+      margin-top: -44px; position: relative; z-index: 10;
+      margin-bottom: 10px;
+    }
+    .logo-img {
+      width: 88px; height: 88px; border-radius: 50%; object-fit: cover;
+      border: 3px solid var(--color-accent);
+      background: var(--color-primary);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
     .logo-placeholder {
-      width: 80px; height: 80px; border-radius: 50%; background: var(--color-accent2);
+      width: 88px; height: 88px; border-radius: 50%; background: var(--color-accent2);
       border: 3px solid var(--color-accent); display: flex; align-items: center; justify-content: center;
       font-family: var(--font-title); font-size: 2rem; color: var(--color-white);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
-    .store-info { flex: 1; }
-    .store-name { font-family: var(--font-title); font-size: 1.8rem; letter-spacing: 1px; line-height: 1; margin-bottom: 4px; }
+    .header-content { padding: 0 20px 16px; position: relative; text-align: center; }
+    .store-name { font-family: var(--font-title); font-size: 1.8rem; letter-spacing: 1px; line-height: 1; margin-bottom: 6px; }
     .store-description { font-size: 0.82rem; opacity: 0.85; line-height: 1.5; margin-bottom: 10px; }
     .store-meta { display: flex; flex-direction: column; gap: 5px; font-size: 0.78rem; opacity: 0.8; }
-    .store-meta-item { display: flex; align-items: flex-start; gap: 7px; }
-    .store-meta-item i { margin-top: 2px; color: var(--color-accent); font-size: 0.75rem; }
+    .store-meta-item { display: flex; align-items: flex-start; justify-content: center; gap: 7px; }
+    .store-meta-item i { margin-top: 2px; color: var(--color-accent); font-size: 0.75rem; flex-shrink: 0; }
+    .store-meta-item span { text-align: left; }
     .social-buttons {
       position: absolute;
       top: 0; right: 12px;
-      height: 75px;
+      height: 120px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -66,9 +78,9 @@
       padding: 0;
     }
     .social-btn {
-      width: 38px; height: 38px; border-radius: 50%; background: #011124;
+      width: 36px; height: 36px; border-radius: 50%; background: rgba(1,17,36,0.7);
       border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center;
-      color: var(--color-white); text-decoration: none; font-size: 1rem; transition: all 0.2s; cursor: pointer;
+      color: var(--color-white); text-decoration: none; font-size: 0.9rem; transition: all 0.2s; cursor: pointer;
     }
     .social-btn:hover { background: var(--color-accent3); border-color: var(--color-accent); }
 
@@ -291,42 +303,40 @@
      HEADER
      ============================================= -->
 <header class="header">
+  <!-- BANNER: para poner imagen real descomenta el img y borra el div placeholder -->
   <div class="header-banner-placeholder">
-    <!-- Si tienes imagen de banner descomenta esto y pon tu URL:
-    <img class="header-banner" src="URL_DE_TU_BANNER.jpg" alt="banner"> -->
+    <!-- <img class="header-banner-img" src="URL_DE_TU_BANNER.jpg" alt="banner"> -->
     <div class="social-buttons">
       <a class="social-btn" href="https://www.tiktok.com/@Relojesjack" title="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
       <a class="social-btn" href="https://www.instagram.com/relojesjack" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
       <a class="social-btn" href="https://wa.me/584129695755" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
   </div>
+
+  <!-- LOGO CENTRADO flotando sobre el banner -->
+  <div class="logo-centered">
+    <img class="logo-img" src="https://res.cloudinary.com/df6vfbjug/image/upload/v1780351872/Logo_circular_1_rjrljg.png" alt="Relojes Jack">
+  </div>
+
+  <!-- CONTENIDO CENTRADO -->
   <div class="header-content">
-    <div class="header-top-row">
-      <div class="logo-container">
-        <!-- Si tienes logo descomenta esto:
-        <img class="logo-img" src="URL_DE_TU_LOGO.png" alt="logo"> -->
-        <img class="logo-img" src="https://res.cloudinary.com/df6vfbjug/image/upload/v1780351872/Logo_circular_1_rjrljg.png" alt="Relojes Jack">
+    <div class="store-name">Relojes Jack</div>
+    <div class="store-description">
+      Relojes - Lo mas Trendy 🔥<br>
+      Casio - Poedagar - Addiesdive - Pagani design - Steeldive - Speth and sonhe
+    </div>
+    <div class="store-meta">
+      <div class="store-meta-item">
+        <i class="fas fa-phone"></i>
+        <span>WhatsApp: +58 412-969-5755</span>
       </div>
-      <div class="store-info">
-        <div class="store-name">Relojes Jack</div>
-        <div class="store-description">
-          Relojes - Lo mas Trendy 🔥<br>
-          Casio - Poedagar - Addiesdive - Pagani design - Steeldive - Speth and sonhe
-        </div>
-        <div class="store-meta">
-          <div class="store-meta-item">
-            <i class="fas fa-phone"></i>
-            <span>WhatsApp: +58 412-969-5755</span>
-          </div>
-          <div class="store-meta-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Entregas gratis en toda Caracas y Los Teques - Envíos nacionales: MRW - Zoom - Tealca</span>
-          </div>
-          <div class="store-meta-item">
-            <i class="far fa-clock"></i>
-            <span>Pedidos por encargo: de 30 a 45 días de espera</span>
-          </div>
-        </div>
+      <div class="store-meta-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Entregas gratis en toda Caracas y Los Teques - Envíos nacionales: MRW - Zoom - Tealca</span>
+      </div>
+      <div class="store-meta-item">
+        <i class="far fa-clock"></i>
+        <span>Pedidos por encargo: de 30 a 45 días de espera</span>
       </div>
     </div>
   </div>
