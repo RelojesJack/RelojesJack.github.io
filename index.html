@@ -407,9 +407,6 @@
       <button onclick="closeSearch()" style="flex:1; padding:10px; background:var(--color-accent); color:white; border:none; border-radius:8px; font-family:var(--font-body); font-size:0.9rem; font-weight:600; cursor:pointer;">
         <i class="fas fa-search"></i> Ver resultados
       </button>
-      <button onclick="clearSearch()" style="padding:10px 14px; background:#f3f4f6; border:none; border-radius:8px; font-family:var(--font-body); font-size:0.85rem; cursor:pointer; color:#666;">
-        Limpiar
-      </button>
     </div>
   </div>
 </div>
@@ -429,6 +426,17 @@
   para que se vea en la grilla.
 ============================================= -->
 <main class="main-content">
+  <div id="searchBanner" style="display:none; background:var(--color-primary); border-radius:10px; padding:10px 16px; margin-bottom:16px; display:none; align-items:center; justify-content:space-between; gap:10px;">
+    <div style="display:flex; align-items:center; gap:8px; color:white; font-size:0.85rem;">
+      <i class="fas fa-search" style="color:var(--color-accent);"></i>
+      <span>Resultados de búsqueda: </span>
+      <strong id="searchBannerTerm" style="color:var(--color-accent);"></strong>
+      <span id="searchBannerCount" style="opacity:0.6; font-size:0.78rem;"></span>
+    </div>
+    <button onclick="clearSearch()" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:white; border-radius:20px; padding:5px 12px; font-size:0.78rem; cursor:pointer; display:flex; align-items:center; gap:5px; white-space:nowrap;">
+      <i class="fas fa-times"></i> Limpiar
+    </button>
+  </div>
   <h2 class="section-title">Productos Disponibles</h2>
   <div class="products-grid" id="productsGrid">
 
@@ -708,6 +716,14 @@ const CATEGORY_ORDER = [
     currentSearch = query.toLowerCase().trim(); applyFilters();
     const count = getProducts().filter(p => !p.classList.contains('hidden')).length;
     document.getElementById('searchCount').textContent = currentSearch ? `${count} resultado(s)` : '';
+    const banner = document.getElementById('searchBanner');
+    if (currentSearch) {
+      banner.style.display = 'flex';
+      document.getElementById('searchBannerTerm').textContent = `"${currentSearch}"`;
+      document.getElementById('searchBannerCount').textContent = `· ${count} resultado(s)`;
+    } else {
+      banner.style.display = 'none';
+    }
   }
 
   function applyFilters() {
