@@ -55,7 +55,16 @@
     .store-meta { display: flex; flex-direction: column; gap: 5px; font-size: 0.78rem; opacity: 0.8; }
     .store-meta-item { display: flex; align-items: flex-start; gap: 7px; }
     .store-meta-item i { margin-top: 2px; color: var(--color-accent); font-size: 0.75rem; }
-    .social-buttons { display: flex; gap: 10px; padding: 16px 0; }
+    .social-buttons {
+      position: absolute;
+      top: 0; right: 12px;
+      height: 75px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 5;
+      padding: 0;
+    }
     .social-btn {
       width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center;
@@ -285,6 +294,11 @@
   <div class="header-banner-placeholder">
     <!-- Si tienes imagen de banner descomenta esto y pon tu URL:
     <img class="header-banner" src="URL_DE_TU_BANNER.jpg" alt="banner"> -->
+    <div class="social-buttons">
+      <a class="social-btn" href="https://www.tiktok.com/@Relojesjack" title="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a class="social-btn" href="https://www.instagram.com/relojesjack" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a class="social-btn" href="https://wa.me/584129695755" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
   </div>
   <div class="header-content">
     <div class="header-top-row">
@@ -314,11 +328,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="social-buttons">
-      <a class="social-btn" href="https://www.tiktok.com/@Relojesjack" title="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a class="social-btn" href="https://www.instagram.com/relojesjack" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a class="social-btn" href="https://wa.me/584129695755" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
   </div>
 </header>
