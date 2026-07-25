@@ -177,6 +177,7 @@
     .product-card {
       background: var(--color-card); border-radius: var(--radius); overflow: hidden;
       box-shadow: var(--shadow); cursor: pointer; transition: all 0.25s; position: relative;
+      display: flex; flex-direction: column;
     }
     .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
     .product-card.hidden { display: none; }
@@ -187,7 +188,7 @@
       width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
       background: linear-gradient(135deg, #f0f0f5, #e0e0ef); color: #c0c0d0; font-size: 2.5rem;
     }
-    .product-info { padding: 10px 12px 12px; }
+    .product-info { padding: 10px 12px 12px; display: flex; flex-direction: column; justify-content: space-between; flex: 1; }
     .product-name {
       font-size: 0.78rem; font-weight: 500; color: var(--color-text); line-height: 1.4; margin-bottom: 6px;
       display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
@@ -378,8 +379,8 @@
   <div class="header-content">
     <div class="store-name">Relojes Jack</div>
     <div class="store-description">
-      Tienda Online - Lo mas Trendy 🔥<br>
-      Casio - Poedagar - Addiesdive - Pagani design
+      Tienda Online - Lo mas Trendy 🔥<br> POEDAGAR<br> 
+      Casio, Addiesdive, Specth & Sonhe y más por encargo 📆
     </div>
     <div class="store-meta">
       <div class="store-meta-item">
@@ -871,11 +872,11 @@ onclick="openModal(this)">
       <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20873%20-%20$25" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
-    <!-- Poedagar 926 blanco -->
+    <!-- Poedagar 926 blanco 
     <div class="product-card"
          data-category="cuarzo,hombre,poedagar"
          data-name="poedagar 926 blanco"
-         data-images="https://res.cloudinary.com/df6vfbjug/image/upload/v1784588423/Poedagar_926_blanco_principal_yapcms.jpg"
+         data-images="https://res.cloudinary.com/df6vfbjug/image/upload/v1784588423/Poedagar_926_blanco_principal_yapcms.jpg, https://res.cloudinary.com/df6vfbjug/image/upload/v1784680920/926_blanco_especificaciones_tecnicas_y7shl1.jpg, https://res.cloudinary.com/df6vfbjug/image/upload/v1784680903/20260707_115302_uw3pbc.jpg, https://res.cloudinary.com/df6vfbjug/image/upload/v1784680903/20260707_115338_tnmeh3.jpg"
          data-desc="<strong>Movimiento:</strong> Cuarzo.<br><strong>Tamaño de la Caja:</strong> 42mm.<br><strong>Resistencia al agua:</strong> 3ATM / 30m.<br><strong>Material:</strong> Acero inoxidable."
          data-wa="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20926%20-%20$25"
          onclick="openModal(this)">
@@ -888,6 +889,25 @@ onclick="openModal(this)">
         <div class="product-price">$ 25,00</div>
       </div>
       <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%20926%20-%20$25" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div> -->
+
+    <!-- Addiesdive Starbucks HULK -->
+    <div class="product-card"
+         data-category="cuarzo,hombre,addiesdive"
+         data-name="addiesdive myh3 hulk"
+         data-images="https://res.cloudinary.com/df6vfbjug/image/upload/v1784586735/Addiesdive_myh3_verde_lc3ux7.jpg"
+         data-desc="<strong>Movimiento:</strong> Cuarzo Miyota 2115.<br><strong>Tamaño de la Caja:</strong> 41mm.<br><strong>Resistencia al agua:</strong> 20ATM / 200m.<br><strong>Material del bisel:</strong> Cerámica."
+         data-wa="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Addiesdive%20MYH3%20-%20$70"
+         onclick="openModal(this)">
+      <div class="product-img-wrap">
+        <img class="product-img" src="https://res.cloudinary.com/df6vfbjug/image/upload/v1784586735/Addiesdive_myh3_verde_lc3ux7.jpg" alt="Addiesdive myh3 hulk">
+      </div>
+      <span class="product-category-badge">Cuarzo</span>
+      <div class="product-info">
+        <div class="product-name">Addiesdive MYH3 - 41mm - Cuarzo Miyota 2115 - HULK</div>
+        <div class="product-price">$ 65,00</div>
+      </div>
+      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Addiesdive%20MYH3%20-%20$70" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
 <!-- Poedagar Dama 302 Blanco con Oro rosa -->
@@ -928,7 +948,7 @@ onclick="openModal(this)">
    <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%203076%20Blancodorado%20-%20$25" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
  </div>
 
-        <!-- Poedagar Dama 3076 Blanco -->
+        <!-- Poedagar Dama 3076 Blanco
         <div class="product-card"
         data-category="cuarzo,dama,poedagar"
         data-name="Poedagar 3076 - Dama - cuarzo"
@@ -945,27 +965,7 @@ onclick="openModal(this)">
        <div class="product-price">$ 25,00</div>
      </div>
      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Poedagar%203076%20Blanco%20-%20$25" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
-   </div>
-
-    <!-- Addiesdive Starbucks HULK -->
-    <div class="product-card"
-         data-category="cuarzo,hombre,addiesdive"
-         data-name="addiesdive myh3 hulk"
-         data-images="https://res.cloudinary.com/df6vfbjug/image/upload/v1784586735/Addiesdive_myh3_verde_lc3ux7.jpg"
-         data-desc="<strong>Movimiento:</strong> Cuarzo Miyota 2115.<br><strong>Tamaño de la Caja:</strong> 41mm.<br><strong>Resistencia al agua:</strong> 20ATM / 200m.<br><strong>Material del bisel:</strong> Cerámica."
-         data-wa="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Addiesdive%20MYH3%20-%20$70"
-         onclick="openModal(this)">
-      <div class="product-img-wrap">
-        <img class="product-img" src="https://res.cloudinary.com/df6vfbjug/image/upload/v1784586735/Addiesdive_myh3_verde_lc3ux7.jpg" alt="Addiesdive myh3 hulk">
-        <!-- Con imagen: <img class="product-img" src="URL_FOTO_PRINCIPAL.jpg" alt="producto"> -->
-      </div>
-      <span class="product-category-badge">Cuarzo</span>
-      <div class="product-info">
-        <div class="product-name">Addiesdive MYH3 - 41mm - Cuarzo Miyota 2115 - HULK</div>
-        <div class="product-price">$ 65,00</div>
-      </div>
-      <a class="whatsapp-btn" href="https://wa.me/584129695755?text=Hola,%20me%20interesa%20el%20Addiesdive%20MYH3%20-%20$70" onclick="event.stopPropagation()" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
+   </div> -->
 
     <!-- ============================================
          AGREGA MÁS PRODUCTOS AQUÍ
